@@ -21,3 +21,6 @@ class Animal {
         return `Name: ${this._name}, Age: ${this._age}, Color: ${this._color}`;
     }
 }
+
+// let bo = new Animal("Bò", "5", "Nâu");
+// console.log(bo);

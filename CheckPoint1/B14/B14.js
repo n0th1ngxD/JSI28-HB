@@ -14,8 +14,6 @@ class TuyenSinh {
     }
 
     themThiSinh(hocsinh) {
-        // this._danhSach.push(sbd);
-        // this._danhSach.push(SinhVien._hoten);
         let temp = {
             sbd: hocsinh._sbd,
             hoten: hocsinh._hoten,
