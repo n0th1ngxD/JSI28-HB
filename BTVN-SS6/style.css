@@ -1,0 +1,121 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    background-color: #c0c0c0;
+    background-image: url(https://mcdn.wallpapersafari.com/medium/28/77/XoaefB.jpg);
+    background-size: cover;
+}
+
+.main {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.register {
+    color: #ffffff;
+    background-color: rgb(15, 32, 56);
+    height: 80vh;
+    width: 70vh;
+    border-radius: 10px;
+    box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.277);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.register input {
+    border: none;
+    border: 1px solid #008a99;
+    border-radius: 3px;
+    height: 32px;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+form {
+    width: 100%;
+}
+
+.input {
+    width: 90%;
+    margin-left: 15px;
+}
+
+.title {
+    width: 100%;
+    height: 50px;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(31, 64, 111);
+    margin-top: 10px;
+}
+
+.name-input {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    width: 90%;
+    margin-left: 15px;
+}
+
+.input-name {
+    width: 48%;
+}
+
+.lower {
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    /* height: 30px; */
+}
+
+.lower a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.lower button {
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    width: 100px;
+    cursor: pointer;
+    border: 3px solid rgb(74, 118, 179);
+    background-color: rgb(15,32,56);
+    color: white;
+}
+
+.lower button:hover {
+    background-color: rgb(74, 118, 179);
+}
+
+.error {
+    color: #ff0000;
+}
+
+#rain {
+    z-index: 9999;
+    background-color: #c0c0c011;
+    height: 50px;
+    width: 31%;
+    position: relative;
+    animation: raining 2s infinite;
+    border-radius: 3px;
+}
+
+@keyframes raining {
+    from {top: 50px;}
+    to {top: 485px;}
+}

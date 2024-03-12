@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <div class="main">
+            <div id="rain"></div>
+            <div class="register">
+                <div class="title">Register</div>
+                <form id="mainForm">
+                    <div class="input">
+                    <input type="text" name="email" id="email" placeholder="Email">
+
+                    <div id="emailError" class="error"></div>
+                </div>
+                <div class="input">
+                    <input type="password" name="password" id="password" placeholder="Password">
+
+                    <div id="passwordError" class="error"></div>
+                </div>
+                <div class="input">
+                    <input type="password" name="rpPassword" id="rpPassword" placeholder="Repeat Password">
+
+                    <div id="rpPasswordError" class="error"></div>
+                </div>
+                <div class="lower">
+                    <button type="submit">Register</button>
+                    <a href="login.html">Already have an account? Login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="./app.js"></script>
+    <script src="./checking.js"></script>
+    <script type="module" src="./firebase.js"></script>
+</body>
+</html>
