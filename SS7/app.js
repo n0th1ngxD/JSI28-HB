@@ -1,5 +1,14 @@
 // Thiết kế kết nối firebase.
-import { getAuth } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+// import { getAuth } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+
+import {
+    addDoc,
+    collection,
+    deleteDoc,
+    doc,
+    getDocs,
+    getFirestore,
+} from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
 
 const firebaseConfig = {
@@ -12,5 +21,45 @@ const firebaseConfig = {
 };
 
  // Initialize Firebase
-export const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+const taskInput = document.getElementById("taskInput");
+const addTaskBtn = document.getElementById("addTaskBtn");
+const taskList = document.getElementById("taskList");
+
+//////// xây dựng các hàm phù hợp
+
+//// hàm render tasks
+
+//// hàm cập nhật dữ liệu mới nhất trên db
+const getTasks = async () => {
+    const querySnapshot = await getDocs(collection(db, "tasks"));
+
+    const tasks = querySnapshot.docs.map((doc) => {
+        id: doc.id;
+        description: doc.data().description;
+    });
+
+    renderTasks(tasks);
+}
+
+//// hàm thêm 1 task vào CSDL
+const addTask = async (description) => {
+    await addDoc(collection(db, "tasks"), {description})
+    getTasks();
+    taskInput.value = "";
+}
+
+//// hàm xóa dữ liệu khi bấm nút X
+
+//// hàm lắng nghe sự kiện khi người dùng click thêm vào task
+addTaskBtn.addEventListener("click", () => {
+    const description = taskInput.value.trim();
+    if(description !== "") {
+        addTask(description);
+    }
+})
+
+//// gọi hàm lấy dữ liệu mới nhất từ db
+getTasks();
