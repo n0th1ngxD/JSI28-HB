@@ -23,13 +23,6 @@ function renderTasks() {
     }
 }
 
-function clearTask() {
-    data.length = 0;
-    localStorage.setItem("data", JSON.stringify(data));
-    console.log("Removed!");
-    renderTasks();
-}
-
 function removeTasks(id) {
     for(let i = 0; i < data.length; i++) {
         if(i == id) {
@@ -43,7 +36,7 @@ function removeTasks(id) {
 addBtn.addEventListener("click", () => {
     let counter = 0;
     // console.log("awdk");
-    if(addToDo.value != "" && addToDo.value != "!clearTasks") {
+    if(addToDo.value != "") {
         for(let i = 0; i < data.length; i++) {
             if(addToDo.value !== data[i]) {
                 counter++;
@@ -56,11 +49,6 @@ addBtn.addEventListener("click", () => {
             renderTasks();
             console.log("Done!");
         }
-    }
-    
-    if(addToDo.value == "!clearTasks") {
-        clearTask();
-        addToDo.value = "";
     }
 })
 
