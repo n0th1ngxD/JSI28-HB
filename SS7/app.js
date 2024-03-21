@@ -31,6 +31,9 @@ const taskList = document.getElementById("taskList");
 //////// xây dựng các hàm phù hợp
 
 //// hàm render tasks
+function renderTasks(tasks) {
+
+}
 
 //// hàm cập nhật dữ liệu mới nhất trên db
 const getTasks = async () => {
@@ -59,7 +62,7 @@ addTaskBtn.addEventListener("click", () => {
     if(description !== "") {
         addTask(description);
     }
-})
+});
 
 //// gọi hàm lấy dữ liệu mới nhất từ db
 getTasks();
